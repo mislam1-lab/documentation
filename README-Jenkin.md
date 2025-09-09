@@ -1,0 +1,357 @@
+
+
+**Task: 3-job Jenkins pipeline to deploy Sparta test app**
+
+What is Jenkins?
+Jenkins is an open-source automation tool that helps teams build, test, and deploy software automatically.
+Instead of doing everything manually, Jenkins can:
+
+Pull code from a repository (e.g., GitHub)
+Build the application
+Run automated tests
+Deploy the application to servers
+This makes software delivery faster, more reliable, and less error-prone.
+
+What is CI/CD?
+CI/CD stands for Continuous Integration and Continuous Delivery/Deployment. It is a modern way of delivering software efficiently.
+
+Continuous Integration (CI):
+Every time developers push new code, it is automatically built and tested.
+Goal: Catch errors early and ensure new code works with the project.
+
+Continuous Delivery (CD):
+After passing tests, the code is packaged and prepared for release.
+Goal: Code is always ready to be deployed with one click.
+
+Continuous Deployment (CD):
+The process goes one step further — the code is automatically deployed to production.
+Goal: Fully automated release pipeline.
+
+Together, CI/CD ensures that updates are delivered quickly, consistently, and safely.
+
+Why Use Jenkins with AWS?
+When Jenkins is combined with Amazon Web Services (AWS), it becomes even more powerful.
+AWS provides the cloud infrastructure, while Jenkins handles the automation.
+
+Typical integrations include:
+
+Deploying applications to AWS EC2 servers
+Storing build files in S3 buckets
+Running scalable apps with ECS or EKS
+Automating infrastructure with Terraform or CloudFormation
+This creates a smooth pipeline where code moves from development → testing → deployment in the cloud.
+
+CI/CD Pipeline with Jenkins and AWS
+Below is a simple diagram of how Jenkins integrates with AWS services in a CI/CD pipeline:
+![alt text](image-93.png)
+
+
+Pre-requisites: You already have:
+
+Job 1 <yourname>-job1-ci-test working
+
+![alt text](image-9.png)
+Steps:
+
+Step 1: Get Job 2 working:
+
+        
+        Name Job 2: similar to project-tech508-mohammed-job2-ci-merge
+
+
+If you haven't already, create a dev branch on your local git repo sparta-test-app-cicd
+Make a change to dev branch and push the code to GitHub - the webhook needs to trigger the pipeline
+
+
+**Step 1:** on Jenkins github project is the same
+ 
+source code management > 
+Repository URL
+git@github.com:mislam1-lab/sparta-test-app-cicd.git
+
+Credentials: mohammeds-jenkins-to-github-key(to read/write repo)
+
+Branches to build > */dev
+
+![alt text](image-11.png)
+
+
+ 
+**additional behaviour > merge before build > use link**
+
+![alt text](image-12.png)
+ 
+Build triggers > mohammed-tech508-job1-ci-test > 
+Trigeer only if build is stable
+![alt text](image-13.png)
+ 
+build environment > ssh agent > add your credentials
+ in your git bash you do ls command and you find your key then you do $ cat mohammed-jenkins-to-github-key.pub
+then copy and paste these credentials you add it in your ssh agent.
+
+build steps > execute shell > find out the code for these steps
+
+ 
+post build actions > push only if build succeds and merge results 
+
+Branch to push > main 
+
+**Target remote name > origin**
+
+
+![alt text](image-14.png)
+
+**Next is got to post build and put git publisher**
+
+
+![alt text](image-15.png)
+
+
+
+
+Step 5: go to git bash and cd tech508-sparta-test-app-cicd:
+
+        then you do nano README.md  within that you write Test webhook 12:17 then save and exit
+        The next command is doing git add . 
+        The next Command is git commit -m "change readme 12:17"
+        The next command is git push origin main
+        git branch dev
+        git switch dev 
+        git push origin dev
+        
+        Name Job 2: similar to project-tech508-mohammed-job2-ci-merge
+
+
+
+Next you go back to Jenkins to see if its merges the first job and second job
+
+![alt text](image-18.png)
+
+
+
+
+
+
+
+
+
+
+        
+
+
+**Get Job 3 working:**
+Step 1: Name Job 3: similar to <yourname>-job3-cd-deploy
+
+Copy the updated & tested code from Jenkins to the AWS EC2 instance
+
+Jenkins will need to SSH into the EC2 instance to update the code & re-run the app
+Each person will need to add the key/SSH credentials/pem file on Jenkins for Job 3 to access your EC2 instance
+To copy the code from Jenkins to the EC2, use the scp or rsync commands from Jenkins
+DO NOT: git clone from main branch and push to production
+
+**You will need an EC2 instance already running**
+
+the next step is to get your Deploy key working and you mention mohammed-jenkins-to-github-key
+
+
+go into my .ssh file and do ls where i find my key which is tech508-mohammed-aws.pem and would do this command 
+$ cat tech508-mohammed-aws.pem and copy and paste the private key credentials.
+
+
+key/SSH credentials/pem file on Jenkins for Job 3 to access your EC2 instance
+
+![alt text](image-90.png)
+
+
+Step 5: go to git bash and cd tech508-sparta-test-app-cicd:
+
+        then you do sudo nano INDEX.js within that you write Test webhook 12:17 then save and exit
+        The next command is doing git add . 
+        The next Command is git commit -m "change readme"
+        The next command is git push origin dev
+        
+
+The next step is to check if its working or not
+
+
+
+
+
+![alt text](image-7.png)
+
+![alt text](image-8.png)
+
+
+
+
+![alt text](image-23.png)
+
+
+**Task: Create EC2 instances for Ansible controller and first target nodes, alsong with Croller, App-node and DB-node.**
+
+**Create a new folder named ansible in your techxxx-test-teraform**
+![alt text](image-16.png)
+        
+        
+
+
+
+ 
+
+
+
+
+
+
+**Task: 3-job Jenkins pipeline to deploy Sparta test app**
+
+![alt text](image-108.png)
+![alt text](image-109.png)
+
+Pre-requisites: You already have:
+
+Job 1 <yourname>-job1-ci-test working
+
+![alt text](image-9.png)
+Steps:
+
+Step 1: Get Job 2 working:
+
+        
+        Name Job 2: similar to project-tech508-mohammed-job2-ci-merge
+
+
+If you haven't already, create a dev branch on your local git repo sparta-test-app-cicd
+Make a change to dev branch and push the code to GitHub - the webhook needs to trigger the pipeline
+
+
+**Step 1:** on Jenkins github project is the same
+ 
+source code management > 
+Repository URL
+git@github.com:mislam1-lab/sparta-test-app-cicd.git
+
+Credentials: mohammeds-jenkins-to-github-key(to read/write repo)
+
+Branches to build > */dev
+
+![alt text](image-11.png)
+
+
+ 
+**additional behaviour > merge before build > use link**
+
+![alt text](image-12.png)
+ 
+Build triggers > mohammed-tech508-job1-ci-test > 
+Trigeer only if build is stable
+![alt text](image-13.png)
+ 
+build environment > ssh agent > add your credentials
+ in your git bash you do ls command and you find your key then you do $ cat mohammed-jenkins-to-github-key.pub
+then copy and paste these credentials you add it in your ssh agent.
+
+build steps > execute shell > find out the code for these steps
+
+ 
+post build actions > push only if build succeds and merge results 
+
+Branch to push > main 
+
+**Target remote name > origin**
+
+
+![alt text](image-14.png)
+
+**Next is got to post build and put git publisher**
+
+
+![alt text](image-15.png)
+
+
+
+
+Step 5: go to git bash and cd tech508-sparta-test-app-cicd:
+
+        then you do nano README.md  within that you write Test webhook 12:17 then save and exit
+        The next command is doing git add . 
+        The next Command is git commit -m "change readme 12:17"
+        The next command is git push origin main
+        git branch dev
+        git switch dev 
+        git push origin dev
+        
+        Name Job 2: similar to project-tech508-mohammed-job2-ci-merge
+
+
+
+Next you go back to Jenkins to see if its merges the first job and second job
+
+![alt text](image-18.png)
+
+
+
+
+
+
+
+
+
+
+        
+
+
+**Get Job 3 working:**
+Step 1: Name Job 3: similar to <yourname>-job3-cd-deploy
+
+Copy the updated & tested code from Jenkins to the AWS EC2 instance
+
+Jenkins will need to SSH into the EC2 instance to update the code & re-run the app
+Each person will need to add the key/SSH credentials/pem file on Jenkins for Job 3 to access your EC2 instance
+To copy the code from Jenkins to the EC2, use the scp or rsync commands from Jenkins
+DO NOT: git clone from main branch and push to production
+
+**You will need an EC2 instance already running**
+
+the next step is to get your Deploy key working and you mention mohammed-jenkins-to-github-key
+
+
+go into my .ssh file and do ls where i find my key which is tech508-mohammed-aws.pem and would do this command 
+$ cat tech508-mohammed-aws.pem and copy and paste the private key credentials.
+
+
+key/SSH credentials/pem file on Jenkins for Job 3 to access your EC2 instance
+
+![alt text](image-90.png)
+
+
+Step 5: go to git bash and cd tech508-sparta-test-app-cicd:
+
+        then you do sudo nano INDEX.js within that you write Test webhook 12:17 then save and exit
+        The next command is doing git add . 
+        The next Command is git commit -m "change readme"
+        The next command is git push origin dev
+        
+
+The next step is to check if its working or not
+
+
+
+
+
+![alt text](image-7.png)
+
+![alt text](image-8.png)
+
+
+
+
+![alt text](image-23.png)
+
+
+**Task: Create EC2 instances for Ansible controller and first target nodes, along with Controller, App-node and DB-node.**
+
+**Create a new folder named ansible in your techxxx-test-teraform**
+![alt text](image-16.png)
+        
+        
