@@ -8,7 +8,8 @@ You will set up two virtual machines (VMs) using AWS EC2:
 
 One for the Sparta frontend app
 One for the MongoDB backend database
-Why Are We Doing This?
+
+**Why Are We Doing This?**
 This isn’t just about running an app. It’s about learning how to deploy software properly, using manual steps first, then moving toward automation with scripts, user data, and AMIs.
 
 Think of it like learning to ride a bike:
@@ -65,7 +66,10 @@ Lay the groundwork for automation
 - Enter security group with allows for SSH & HTTP
    click edit
    Source type anywhere (so any one can access port); tech508-YOURNAME- sparta-app
-   Type: Custom TCP :choose port : 3000
+   Type: SSH on port 22 (for connecting) after cick on add security
+         HTTP on port 80 (for website access)
+after click on add security
+Custom TCP on port 3000 (to run the app)
 -  Launch instance
 
 ![alt text](image-82.png)
@@ -140,9 +144,11 @@ Next we connect and get the ssh command to then connect to the git bash terminal
 ### 1. Update Your System
 Next we go  
  
-- sudo apt-get update
+- `sudo apt-get update`
+  
  ![alt text](image-67.png)
-- sudo apt-get upgrade -y
+- `sudo apt-get upgrade -y`
+  
 - ![alt text](image-68.png)
  
 ### Download Mongodb 22.4 version 7 from the browser and follow the steps given
@@ -161,8 +167,11 @@ Next we go
 ![alt text](image-70.png)
 
 #### Reload the package database
-- sudo apt-get update
+
+- `sudo apt-get update1
+  
  ![alt text](image-71.png)
+
 ##### install mongodb
 - "sudo apt-get install -y \
    mongodb-org=7.0.22 \
@@ -173,11 +182,14 @@ Next we go
    mongodb-org-mongos=7.0.22 \
    mongodb-org-tools=7.0.22 \
    mongodb-org-database-tools-extra=7.0.22"
+  
  ![alt text](image-72.png)
 
 #### Check the status:
 - sudo systemctl status mongod ( you can see the status in not enabled now )
+  
  ![alt text](image-73.png)
+ 
 ####  Take a back up file for mongod.configure
 The next step is go to root directory which is cd / and then cd into etc and do ls to list the file which you mongod.comnf
 
@@ -207,7 +219,8 @@ nohup npm start &
 - make sure you can re-run it
  
  
-![alt text](Sparta_app.png)
+<img width="914" height="481" alt="image" src="https://github.com/user-attachments/assets/2c40256f-4d32-45dd-ba19-070bb547615e" />
+
 
 
 
