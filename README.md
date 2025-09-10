@@ -1,5 +1,51 @@
-<<<<<<< HEAD
+
 ###  Provisioning Guide: Sparta Tech App & MongoDB (Ubuntu)
+This guide walks you through how to get a simple full-stack app running. The app has two parts:
+
+A frontend – what users see when they go to a website
+A backend/database – where the app stores and retrieves data
+You will set up two virtual machines (VMs) using AWS EC2:
+
+One for the Sparta frontend app
+One for the MongoDB backend database
+Why Are We Doing This?
+This isn’t just about running an app. It’s about learning how to deploy software properly, using manual steps first, then moving toward automation with scripts, user data, and AMIs.
+
+Think of it like learning to ride a bike:
+
+First, you go step by step.
+Then you add speed and control.
+Eventually, you automate and refine the process.
+What Does the Sparta App Need?
+You will deploy a full-stack application that includes:
+
+A frontend app (user interface)
+A MongoDB backend (database)
+Required Tools & Configurations:
+Frontend EC2 Instance:
+Ubuntu 24.04 LTS
+Node.js v20
+NGINX (for reverse proxy)
+PM2 (to keep the app running)
+Git (to clone the repo)
+Port 3000 open
+Security Group allowing SSH, HTTP, and TCP:3000
+Backend EC2 Instance:
+Ubuntu 22.04 LTS
+MongoDB 7.0 or 8.0
+Port 27017 open
+bindIp set to 0.0.0.0 (for external access)
+Security Group allowing SSH and TCP:27017
+
+
+**Why Manual First?**
+Before jumping into automation, it’s best to do things manually to:
+
+Understand each step
+Spot and fix issues
+Learn how the app works
+Lay the groundwork for automation
+<img width="1453" height="615" alt="image" src="https://github.com/user-attachments/assets/6c750206-493e-40cb-b68f-ca4d36a80cf9" />
 
  A **Sparta Tech Node.js app** with NGINX as reverse proxy
 - A **MongoDB 7.0 database**
@@ -43,16 +89,10 @@
 
  `sudo apt upgrade`
  
- install nginx by doing 
+ Next we will do installation for nginx by doing 
  
  `sudo apt install nginx`
-
-
-
- 
-- echo "Updating system..."
 - `sudo apt-get update`
-- echo "Done"
  
 - `sudo apt-get upgrade -y`
 - `sudo apt-get install nginx -y`
