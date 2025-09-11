@@ -13,27 +13,34 @@ What Are Subnets?
 Subnets divide your VPC into smaller IP ranges.
 
 You can place EC2 instances in either, depending on whether they need public exposure.
+<img width="1150" height="840" alt="image" src="https://github.com/user-attachments/assets/459900f7-73bc-4246-a549-78f711875011" />
 
-CIDR Blocks
 
-recreate 2 tier vpc
 
-##Part 1 — Create Custom VPC##
+**Part 1 — Create Custom VPC**
 Login to AWS
+
 Go to VPC on the left-hand side
+
 Create VPC and select VPC only
+
 Name and Tag: tech508-mohammed-2tier-first-vpc
+
 IPv4 CIDR: 10.0.0.0/16
+
 Click create VPC
-vpc is done now we are doing subnets
 
 ![alt text](/Image%20folder/image-96.png)
 
 **Create Subnets**
 Click Subnets on the left-hand side
+
 Create subnet:
+
 VPC ID: enter your VPC name
+
 Subnet name: tech508-mohammed-public-subnet
+
 Availability Zone: Europe (Ireland) / euw1-az3 (eu-west-1a)
 IPv4 VPC CIDR block: 10.0.0.0/16
 IPv4 subnet CIDR block: 10.0.2.0/24
@@ -41,26 +48,35 @@ IPv4 subnet CIDR block: 10.0.2.0/24
 ![alt text](/Image%20folder/image-97.png)
 ![alt text](/Image%20folder/image-98.png)
 
-Add new subnet:
+**Add new subnet:**
 Subnet name: tech508-mohammed-private-subnet
+
 Availability Zone: Europe (Ireland) / euw1-az3 (eu-west-1a)
+
 IPv4 VPC CIDR block: 10.0.0.0/16
 IPv4 subnet CIDR block: 10.0.3.0/24
+
 Click Create subnet
 ![alt text](/Image%20folder/image-99.png)
 
 **Create Internet Gateway**
 Click Internet Gateway on the left-hand side
+
 Create Internet Gateway:
+
 Name tag: tech508-mohammed-2tier-first-vpc-ig
+
 Click Create Internet Gateway
 ![alt text](/Image%20folder/image-100.png)
+
 Create and attach to your VPC
 ![alt text](/Image%20folder/image-101.png)
 
 **Create Route Table**
 Click Route Tables on the left-hand side
+
 Create route table:
+
 Name tag: tech508-mohammed-2tier-first-vpc-public-rt
 Select your VPC
 Create route table
@@ -75,16 +91,20 @@ Target: Internet Gateway (select your IGW)
 Save
 ![alt text](/Image%20folder/image-103.png)
 
-Part 2 — Launch Database Instance (Private Subnet)
+**Part 2 — Launch Database Instance (Private Subnet)**
 Find your AMI (Database)
 Launch instance:
+
 Name: tech508-mohammed-2tier-sparta-app-database-sg
+
 Enter your aws key: tech508-mohammed-aws
+
 VPC: Private
 ![alt text](/Image%20folder/image-104.png)
 Auto assign public ip: disabled. You should be able to disable it because the subnet set up means they can communicate via the private IP of the db instance.
 
 Create new security group:
+
 Name: tech508-mohammed-2tier-sparta-app-database-sg-allow-27017
 Remove default rules
 Add rule:
@@ -101,18 +121,21 @@ Source: Anywhere
 **Part 3 — Launch App Instance (Public Subnet)**
 Find your AMI (App)
 Launch instance:
-Name: tech508-rubaet-2tier-sparta-app-ready-to-run-app
+
+Name: tech508-mohammed-2tier-sparta-app-ready-to-run-app
 VPC: Public
 Auto-assign public IP: enable
 Security group:
-Name: tech508-rubaet-2tier-vpc-sparta-app-allow-HTTP-SSH
+Name: tech508-mohammed-2tier-vpc-sparta-app-allow-HTTP-SSH
+
 User Data:
-#!/bin/bash
-cd repo/app
-export DB_HOST=mongodb://<MYPRIVATEIP_FROM_DATABASE>:27017/posts
-pm2 start app.js
+`#!/bin/bash`
+`cd repo/app`
+`export DB_HOST=mongodb://<MYPRIVATEIP_FROM_DATABASE>:27017/posts`
+`pm2 start app.js`
 Launch
-Part 4 — Auto Scaling & Load Balancer Setup
+
+**Part 4 — Auto Scaling & Load Balancer Setup**
 Login to AWS
 In EC2 go to Launch Instance and create:
 Name: tech508-rubaet-for-asg-app-lt
