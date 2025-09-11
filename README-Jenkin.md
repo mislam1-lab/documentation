@@ -43,6 +43,7 @@ This creates a smooth pipeline where code moves from development → testing →
 CI/CD Pipeline with Jenkins and AWS
 Below is a simple diagram of how Jenkins integrates with AWS services in a CI/CD pipeline:
 ![alt text](/Image%20folder/image-93.png)
+<img width="1470" height="861" alt="image" src="https://github.com/user-attachments/assets/da421245-6e51-487c-8cd5-88ebffec8564" />
 
 
 **Creation of Jenkins Server on AWS**
