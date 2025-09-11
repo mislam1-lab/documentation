@@ -132,84 +132,71 @@ once done that you do cd repo/app
 ![alt text](/Image%20folder/image-49.png)
 
 
-<<<<<<< HEAD
-
-### Script for the provisioning data base ###
-![alt text](/Image%20folder/image-110.png)
- 
-- Follow the same steps to create the new vm named -tech508-mohammed-sparta-db
-- 
- ![alt text](/Image%20folder/image-65.png)
-=======
 ##  Part 2: Setup the Database & Script for the provisioning data base
 ![alt text](/Image%20folder/image-110.png)
  
 - Follow the same steps to create the new vm named -tech508-mohammed-sparta-db
  ![alt text](/Image%20folder/image-65.png)
->>>>>>> a185690a1eead9216e0e18546c62f85756e2869e
 
 Next we connect and get the ssh command to then connect to the git bash terminal where with first cd into .ssh then paste the code to connect. 
 ### 1. Update Your System
 Next we go  
  
-<<<<<<< HEAD
-- sudo apt-get update
- ![alt text](/Image%20folder/image-67.png)
-- sudo apt-get upgrade -y
-- ![alt text](/Image%20folder/image-68.png)
-=======
+- `sudo apt-get update`
+
+- `sudo apt-get upgrade -y`
+
 - `sudo apt-get update`
   
- ![alt text](/Image%20folder/image-67.png)
 - `sudo apt-get upgrade -y`
   
  ![alt text](/Image%20folder/image-68.png)
->>>>>>> a185690a1eead9216e0e18546c62f85756e2869e
+
  
 ### Download Mongodb 22.4 version 7 from the browser and follow the steps given
  
 #### Import PUblic key
  
-- `curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
-   sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
-   --dearmor`
+- `curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \`
+   `sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \`
+   `--dearmor`
 
  ![alt text](/Image%20folder/image-69.png)
 
 ### create list file
-- echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+`- echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-`7.0.list`
 
 ![alt text](/Image%20folder/image-70.png)
 
 #### Reload the package database
-<<<<<<< HEAD
-- sudo apt-get update
- ![alt text](/Image%20folder/image-71.png)
-=======
 
 - `sudo apt-get update`
   
  ![alt text](/Image%20folder/image-71.png)
 
->>>>>>> a185690a1eead9216e0e18546c62f85756e2869e
+- `sudo apt-get update`
+  
+ ![alt text](/Image%20folder/image-71.png)
+
 ##### install mongodb
-- `sudo apt-get install -y \
-   mongodb-org=7.0.22 \
-   mongodb-org-database=7.0.22 \
-   mongodb-org-server=7.0.22 \
-   mongodb-mongosh \
-   mongodb-org-shell=7.0.22 \
-   mongodb-org-mongos=7.0.22 \
-   mongodb-org-tools=7.0.22 \
-<<<<<<< HEAD
-   mongodb-org-database-tools-extra=7.0.22"
+- `sudo apt-get install -y \`
+  `mongodb-org=7.0.22 \`
+  `mongodb-org-database=7.0.22 \`
+  `mongodb-org-server=7.0.22 \`
+  `mongodb-mongosh \`
+  `mongodb-org-shell=7.0.22 \`
+   `mongodb-org-mongos=7.0.22 \`
+  ` mongodb-org-tools=7.0.22 \`
+  ` mongodb-org-database-tools-extra=7.0.22"`
+  
  ![alt text](/Image%20folder/image-72.png)
 
 #### Check the status:
-- sudo systemctl status mongod ( you can see the status in not enabled now )
+- `sudo systemctl status mongod` ( you can see the status in not enabled now )
+  
  ![alt text](/Image%20folder/image-73.png)
-=======
-   mongodb-org-database-tools-extra=7.0.22`
+
+   `mongodb-org-database-tools-extra=7.0.22`
   
  ![alt text](/Image%20folder/image-72.png)
 
@@ -218,7 +205,7 @@ Next we go
   
  ![alt text](/Image%20folder/image-73.png)
  
->>>>>>> a185690a1eead9216e0e18546c62f85756e2869e
+
 ####  Take a back up file for mongod.configure
 The next step is go to root directory which is cd / and then cd into etc and do ls to list the file which you mongod.comnf
 
@@ -246,27 +233,6 @@ nohup npm start &
 - To stop app: find process ID (node ...) - this process will be engaging 3000
 - kill it
 - make sure you can re-run it
- 
- 
-<<<<<<< HEAD
-![alt text](/Image%20folder/Sparta_app.png)
-=======
+
 <img width="914" height="481" alt="image" src="https://github.com/user-attachments/assets/2c40256f-4d32-45dd-ba19-070bb547615e" />
 
->>>>>>> a185690a1eead9216e0e18546c62f85756e2869e
-
-
-
-
-
-
-
-
- 
- 
- 
- 
- 
-=======
-# sparta-cloud-docs
->>>>>>> 96c7a85907ad53b177527ac1c1fd0c386ee8626f
