@@ -59,10 +59,10 @@ Select your key pair login
 Click on allow HTTP and create your security group if you haven't "mohammed-jenkins-allow-http" and description "mohammed-jenkins-allow-http-this-is-jenkins"
 Select the inbound security group rule to :
 
-SSH
-Type: SSH
+- SSH
+- Type: SSH
 
-Port: 22
+- Port: 22
 
 Source: your IP only
 
