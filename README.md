@@ -142,10 +142,10 @@ once done that you do cd repo/app
  ![alt text](/Image%20folder/image-65.png)
 =======
 ##  Part 2: Setup the Database & Script for the provisioning data base
-![alt text](image-110.png)
+![alt text](/Image%20folder/image-110.png)
  
 - Follow the same steps to create the new vm named -tech508-mohammed-sparta-db
- ![alt text](image-65.png)
+ ![alt text](/Image%20folder/image-65.png)
 >>>>>>> a185690a1eead9216e0e18546c62f85756e2869e
 
 Next we connect and get the ssh command to then connect to the git bash terminal where with first cd into .ssh then paste the code to connect. 
@@ -160,10 +160,10 @@ Next we go
 =======
 - `sudo apt-get update`
   
- ![alt text](image-67.png)
+ ![alt text](/Image%20folder/image-67.png)
 - `sudo apt-get upgrade -y`
   
- ![alt text](image-68.png)
+ ![alt text](/Image%20folder/image-68.png)
 >>>>>>> a185690a1eead9216e0e18546c62f85756e2869e
  
 ### Download Mongodb 22.4 version 7 from the browser and follow the steps given
@@ -189,7 +189,7 @@ Next we go
 
 - `sudo apt-get update`
   
- ![alt text](image-71.png)
+ ![alt text](/Image%20folder/image-71.png)
 
 >>>>>>> a185690a1eead9216e0e18546c62f85756e2869e
 ##### install mongodb
@@ -211,12 +211,12 @@ Next we go
 =======
    mongodb-org-database-tools-extra=7.0.22`
   
- ![alt text](image-72.png)
+ ![alt text](/Image%20folder/image-72.png)
 
 #### Check the status:
 - `sudo systemctl status mongod` ( you can see the status in not enabled now )
   
- ![alt text](image-73.png)
+ ![alt text](/Image%20folder/image-73.png)
  
 >>>>>>> a185690a1eead9216e0e18546c62f85756e2869e
 ####  Take a back up file for mongod.configure
