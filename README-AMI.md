@@ -1,4 +1,41 @@
 ## 3. Documentation for AMI Creation
+An AMI (Amazon Machine Image) is a preconfigured virtual machine image to launch new instances from. They include:
+OS
+software installed
+any other data
+of the VM the image was taken from.
+
+The app script has already been run through user data in the original VM and will not be run again -> everything has been installed and configured but the app itself will not be told to start up.
+
+A small script should be given in user data of the new VM being made from the image including:
+
+#!/bin/bash
+cd into app folder
+set environment variable for database private IP
+pm2 start app.js
+Creating VMs from AMIs
+create database and app VMs with previous scripts in user data, make sure the app works exactly as it should
+on each VM:
+Actions -> Create image
+naming convention: tech508-tabitha-test-sparta-app-ready-to-run-database/app
+Add new tag
+"Name" - name as above
+Create image
+when status is Available, Launch instance from AMI
+database as usual
+app needs short script in user data:
+see run-app-only.sh
+#!/bin/bash to define bash script
+export DB_HOST=mongodb://<privIP>:27017/posts set env var for database IP
+make sure to change to the new db instance IP
+cd repo/app navigate to app folder
+pm2 stop all stop any previous processes
+pm2 start app.js start the app
+
+
+
+
+
 
 ### Create DB AMI
 1. First we go to **Instances > Actions > Image and Templates > Create Image**
