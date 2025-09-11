@@ -43,14 +43,14 @@ This creates a smooth pipeline where code moves from development → testing →
 
 CI/CD Pipeline with Jenkins and AWS
 Below is a simple diagram of how Jenkins integrates with AWS services in a CI/CD pipeline:
-![alt text](image-93.png)
+![alt text](/Image%20folder/image-93.png)
 
 
 Pre-requisites: You already have:
 
 Job 1 <yourname>-job1-ci-test working
 
-![alt text](image-9.png)
+![alt text](/Image%20folder/image-9.png)
 Steps:
 
 Step 1: Get Job 2 working:
@@ -73,17 +73,17 @@ Credentials: mohammeds-jenkins-to-github-key(to read/write repo)
 
 Branches to build > */dev
 
-![alt text](image-11.png)
+![alt text](/Image%20folder/image-11.png)
 
 
  
 **additional behaviour > merge before build > use link**
 
-![alt text](image-12.png)
+![alt text](/Image%20folder/image-12.png)
  
 Build triggers > mohammed-tech508-job1-ci-test > 
 Trigeer only if build is stable
-![alt text](image-13.png)
+![alt text](/Image%20folder/image-13.png)
  
 build environment > ssh agent > add your credentials
  in your git bash you do ls command and you find your key then you do $ cat mohammed-jenkins-to-github-key.pub
@@ -99,12 +99,12 @@ Branch to push > main
 **Target remote name > origin**
 
 
-![alt text](image-14.png)
+![alt text](/Image%20folder/image-14.png)
 
 **Next is got to post build and put git publisher**
 
 
-![alt text](image-15.png)
+![alt text](/Image%20folder/image-15.png)
 
 
 
@@ -125,7 +125,7 @@ Step 5: go to git bash and cd tech508-sparta-test-app-cicd:
 
 Next you go back to Jenkins to see if its merges the first job and second job
 
-![alt text](image-18.png)
+![alt text](/Image%20folder/image-18.png)
 
 
 
@@ -160,7 +160,7 @@ $ cat tech508-mohammed-aws.pem and copy and paste the private key credentials.
 
 key/SSH credentials/pem file on Jenkins for Job 3 to access your EC2 instance
 
-![alt text](image-90.png)
+![alt text](/Image%20folder/image-90.png)
 
 
 Step 5: go to git bash and cd tech508-sparta-test-app-cicd:
@@ -177,20 +177,20 @@ The next step is to check if its working or not
 
 
 
-![alt text](image-7.png)
+![alt text](/Image%20folder/image-7.png)
 
-![alt text](image-8.png)
-
-
+![alt text](/Image%20folder/image-8.png)
 
 
-![alt text](image-23.png)
+
+
+![alt text](/Image%20folder/image-23.png)
 
 
 **Task: Create EC2 instances for Ansible controller and first target nodes, alsong with Croller, App-node and DB-node.**
 
 **Create a new folder named ansible in your techxxx-test-teraform**
-![alt text](image-16.png)
+![alt text](/Image%20folder/image-16.png)
         
         
 
@@ -205,14 +205,14 @@ The next step is to check if its working or not
 
 **Task: 3-job Jenkins pipeline to deploy Sparta test app**
 
-![alt text](image-108.png)
-![alt text](image-109.png)
+![alt text](/Image%20folder/image-108.png)
+![alt text](/Image%20folder/image-109.png)
 
 Pre-requisites: You already have:
 
 Job 1 <yourname>-job1-ci-test working
 
-![alt text](image-9.png)
+![alt text](/Image%20folder/image-9.png)
 Steps:
 
 Step 1: Get Job 2 working:
@@ -235,17 +235,17 @@ Credentials: mohammeds-jenkins-to-github-key(to read/write repo)
 
 Branches to build > */dev
 
-![alt text](image-11.png)
+![alt text](/Image%20folder/image-11.png)
 
 
  
 **additional behaviour > merge before build > use link**
 
-![alt text](image-12.png)
+![alt text](/Image%20folder/image-12.png)
  
 Build triggers > mohammed-tech508-job1-ci-test > 
 Trigeer only if build is stable
-![alt text](image-13.png)
+![alt text](/Image%20folder/image-13.png)
  
 build environment > ssh agent > add your credentials
  in your git bash you do ls command and you find your key then you do $ cat mohammed-jenkins-to-github-key.pub
@@ -261,12 +261,12 @@ Branch to push > main
 **Target remote name > origin**
 
 
-![alt text](image-14.png)
+![alt text](/Image%20folder/image-14.png)
 
 **Next is got to post build and put git publisher**
 
 
-![alt text](image-15.png)
+![alt text](/Image%20folder/image-15.png)
 
 
 
@@ -287,7 +287,7 @@ Step 5: go to git bash and cd tech508-sparta-test-app-cicd:
 
 Next you go back to Jenkins to see if its merges the first job and second job
 
-![alt text](image-18.png)
+![alt text](/Image%20folder/image-18.png)
 
 
 
@@ -322,7 +322,7 @@ $ cat tech508-mohammed-aws.pem and copy and paste the private key credentials.
 
 key/SSH credentials/pem file on Jenkins for Job 3 to access your EC2 instance
 
-![alt text](image-90.png)
+![alt text](/Image%20folder/image-90.png)
 
 
 Step 5: go to git bash and cd tech508-sparta-test-app-cicd:
@@ -339,19 +339,19 @@ The next step is to check if its working or not
 
 
 
-![alt text](image-7.png)
+![alt text](/Image%20folder/image-7.png)
 
-![alt text](image-8.png)
-
-
+![alt text](/Image%20folder/image-8.png)
 
 
-![alt text](image-23.png)
+
+
+![alt text](/Image%20folder/image-23.png)
 
 
 **Task: Create EC2 instances for Ansible controller and first target nodes, along with Controller, App-node and DB-node.**
 
 **Create a new folder named ansible in your techxxx-test-teraform**
-![alt text](image-16.png)
+![alt text](/Image%20folder/image-16.png)
         
         

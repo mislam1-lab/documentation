@@ -27,7 +27,7 @@ IPv4 CIDR: 10.0.0.0/16
 Click create VPC
 vpc is done now we are doing subnets
 
-![alt text](image-96.png)
+![alt text](/Image%20folder/image-96.png)
 
 **Create Subnets**
 Click Subnets on the left-hand side
@@ -38,8 +38,8 @@ Availability Zone: Europe (Ireland) / euw1-az3 (eu-west-1a)
 IPv4 VPC CIDR block: 10.0.0.0/16
 IPv4 subnet CIDR block: 10.0.2.0/24
 
-![alt text](image-97.png)
-![alt text](image-98.png)
+![alt text](/Image%20folder/image-97.png)
+![alt text](/Image%20folder/image-98.png)
 
 Add new subnet:
 Subnet name: tech508-mohammed-private-subnet
@@ -47,16 +47,16 @@ Availability Zone: Europe (Ireland) / euw1-az3 (eu-west-1a)
 IPv4 VPC CIDR block: 10.0.0.0/16
 IPv4 subnet CIDR block: 10.0.3.0/24
 Click Create subnet
-![alt text](image-99.png)
+![alt text](/Image%20folder/image-99.png)
 
 **Create Internet Gateway**
 Click Internet Gateway on the left-hand side
 Create Internet Gateway:
 Name tag: tech508-mohammed-2tier-first-vpc-ig
 Click Create Internet Gateway
-![alt text](image-100.png)
+![alt text](/Image%20folder/image-100.png)
 Create and attach to your VPC
-![alt text](image-101.png)
+![alt text](/Image%20folder/image-101.png)
 
 **Create Route Table**
 Click Route Tables on the left-hand side
@@ -65,7 +65,7 @@ Name tag: tech508-mohammed-2tier-first-vpc-public-rt
 Select your VPC
 Create route table
 
-![alt text](image-102.png)
+![alt text](/Image%20folder/image-102.png)
 
 Actions → Edit subnet associations → select public subnet → Save
 Edit routes:
@@ -73,7 +73,7 @@ Add route:
 Destination: 0.0.0.0/0
 Target: Internet Gateway (select your IGW)
 Save
-![alt text](image-103.png)
+![alt text](/Image%20folder/image-103.png)
 
 Part 2 — Launch Database Instance (Private Subnet)
 Find your AMI (Database)
@@ -81,7 +81,7 @@ Launch instance:
 Name: tech508-mohammed-2tier-sparta-app-database-sg
 Enter your aws key: tech508-mohammed-aws
 VPC: Private
-![alt text](image-104.png)
+![alt text](/Image%20folder/image-104.png)
 Auto assign public ip: disabled. You should be able to disable it because the subnet set up means they can communicate via the private IP of the db instance.
 
 Create new security group:
@@ -92,11 +92,11 @@ Type: Custom TCP
 Port range: 27017
 Source: Anywhere
 
-![alt text](image-105.png)
+![alt text](/Image%20folder/image-105.png)
 
-![alt text](image-106.png)
+![alt text](/Image%20folder/image-106.png)
 
-![alt text](image-107.png)
+![alt text](/Image%20folder/image-107.png)
 
 **Part 3 — Launch App Instance (Public Subnet)**
 Find your AMI (App)
@@ -138,92 +138,92 @@ Copy public IP and test in browser
 
 go search vpc on aws and create vpc
 
-![alt text](image-38.png)
+![alt text](/Image%20folder/image-38.png)
 
 then we add our credentails such as devops-upskilling-mohammed-vpc-2 and the doing cidr block 10.0.0.0/16
 
-![alt text](image-39.png)
+![alt text](/Image%20folder/image-39.png)
 
 next you the name tag should be the same 
 
-![alt text](image-40.png)
+![alt text](/Image%20folder/image-40.png)
 
 
 The next thing to do is go subnet which on the left side of the next to your vpc and click on subnet and create subnets
 
-![alt text](image-42.png)
+![alt text](/Image%20folder/image-42.png)
 
 Next on the VPC ID you go to the dropdown option and find your vpc that you created
 
-![alt text](image-44.png)
+![alt text](/Image%20folder/image-44.png)
 
 next we go subnet setting and put down our credentails devops-upskilling-mohammed-public-subnet-2 and then so the avilability zone put down ireland 1a and then for IPv4 subnet CIDR block you put down public cidr block which is 10.0.2.0/24
 
 
-![alt text](image-47.png)
+![alt text](/Image%20folder/image-47.png)
 
 Next we do same thing again but for private subnet. put down our credentails devops-upskilling-mohammed-private-subnet-2 and then so the avilability zone put down ireland 1b and then for IPv4 subnet CIDR block you put down private cidr block which is 10.0.3.0/24
 
-![alt text](image-48.png)
+![alt text](/Image%20folder/image-48.png)
 
 
 Next we go to internet gateway and crea te internet gateway
 
-![alt text](image-50.png)
+![alt text](/Image%20folder/image-50.png)
 
 then from name of the tag devops-upskilling-mohammed-vpc-ig-2 and then create internet gateway
 
 next we go to attach to a vpc and then find your avilable vpc's and attach devops-upskilling-mohammed-vpc-2 andn click attached
 
-![alt text](image-51.png)
+![alt text](/Image%20folder/image-51.png)
 
 Next you go to route tables 
-![alt text](image-52.png)
+![alt text](/Image%20folder/image-52.png)
 
 we go create route table
 
-![alt text](image-53.png)
+![alt text](/Image%20folder/image-53.png)
 
 
 next you add your nameing conventions
 
-![alt text](image-54.png)
+![alt text](/Image%20folder/image-54.png)
 
-![alt text](image-55.png)
+![alt text](/Image%20folder/image-55.png)
 
 next step is go subnet assosciation and edit subnet assosciation and click public and save assosciation
 
-![alt text](image-56.png)
+![alt text](/Image%20folder/image-56.png)
 
 
 
-![alt text](image-57.png)
+![alt text](/Image%20folder/image-57.png)
 
 
-![alt text](image-58.png)
+![alt text](/Image%20folder/image-58.png)
 
-![alt text](image-59.png)
+![alt text](/Image%20folder/image-59.png)
 
-![alt text](image-60.png)
-
-
-
-
-
-![alt text](image-61.png)
+![alt text](/Image%20folder/image-60.png)
 
 
 
 
 
+![alt text](/Image%20folder/image-61.png)
 
 
 
-![alt text](image-62.png)
 
-![alt text](image-63.png)
 
-![alt text](image-64.png)
+
+
+
+![alt text](/Image%20folder/image-62.png)
+
+![alt text](/Image%20folder/image-63.png)
+
+![alt text](/Image%20folder/image-64.png)
 
 
 
@@ -246,7 +246,7 @@ next step is go subnet assosciation and edit subnet assosciation and click publi
  
  Architecture diagram
  
- ![alt text](image-17.png)
+ ![alt text](/Image%20folder/image-17.png)
  archdiagram
  
  database has no route to internet traffic

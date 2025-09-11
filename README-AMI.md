@@ -2,15 +2,15 @@
 
 ### Create DB AMI
 1. First we go to **Instances > Actions > Image and Templates > Create Image**
-![alt text](image-75.png)
-2. Name: `tech508-mohammed-test-sparta-app-ready-to-run-database`
-![alt text](image-76.png)
-3. Add Tag:
+![alt text](/Image%20folder/image-75.png)
+1. Name: `tech508-mohammed-test-sparta-app-ready-to-run-database`
+![alt text](/Image%20folder/image-76.png)
+1. Add Tag:
    - **Key**: `Name`
    - **Value**: `tech508-mohammed-test-sparta-app-ready-to-run-database`
-4. Click **Create Image**
+2. Click **Create Image**
 
-![alt text](image-77.png)
+![alt text](/Image%20folder/image-77.png)
 
 ### Create App AMI
 1. Go to **Instances > Actions > Image and Templates > Create Image**

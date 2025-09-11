@@ -143,9 +143,9 @@ Click Create launch template in the Summary box on the right-hand side
  
  
  
- ![alt text](image-6.png)
+ ![alt text](/Image%20folder/image-6.png)
  
- ![alt text](image-5.png)        
+ ![alt text](/Image%20folder/image-5.png)        
  
  
  how to connect the inside the app script into database
@@ -294,7 +294,7 @@ Click Create launch template in the Summary box on the right-hand side
      - Target value: 50
      - Instance warmup: 300 seconds
   
- [Here](./images/Screenshot_7.png) is a screenshot of what it looks like
+ [Here](/Image%20folder/Screenshot_7.png) is a screenshot of what it looks like
   
  Any other sections can be left as defualt
   

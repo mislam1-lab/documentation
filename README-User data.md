@@ -7,7 +7,7 @@ Step 1: create instance from virtual machine called tech508-mohammed-sparta-app-
 Step 2: once created we then add all the previous group and on the bottom of instance we add this script on the instance: 
 
 
-![alt text](image-95.png)
+![alt text](/Image%20folder/image-95.png)
 #!/bin/bash
  
 #Scipt for the database
