@@ -111,19 +111,3 @@ pm2 start app.js
  Step 3: in the section below click Add new tag and put Name for key and value optional tech508-mohammed-test-sparta-app-ready-to-run then click Create image
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- ubuntu@ip-172-31-29-198:~$ lsof -i :3000
- ubuntu@ip-172-31-29-198:~$ ls
- prov-db.sh
- ubuntu@ip-172-31-29-198:~$ ./prov-db.sh
- 
