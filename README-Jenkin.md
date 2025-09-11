@@ -1,7 +1,6 @@
 
 
-**Task: 3-job Jenkins pipeline to deploy Sparta test app**
-
+**Jenkins and CI/CD**
 What is Jenkins?
 Jenkins is an open-source automation tool that helps teams build, test, and deploy software automatically.
 Instead of doing everything manually, Jenkins can:
@@ -12,24 +11,24 @@ Run automated tests
 Deploy the application to servers
 This makes software delivery faster, more reliable, and less error-prone.
 
-What is CI/CD?
+**What is CI/CD?**
 CI/CD stands for Continuous Integration and Continuous Delivery/Deployment. It is a modern way of delivering software efficiently.
 
-Continuous Integration (CI):
+**Continuous Integration (CI)**:
 Every time developers push new code, it is automatically built and tested.
 Goal: Catch errors early and ensure new code works with the project.
 
-Continuous Delivery (CD):
+**Continuous Delivery (CD)**:
 After passing tests, the code is packaged and prepared for release.
 Goal: Code is always ready to be deployed with one click.
 
-Continuous Deployment (CD):
+**Continuous Deployment (CD)**:
 The process goes one step further — the code is automatically deployed to production.
 Goal: Fully automated release pipeline.
 
 Together, CI/CD ensures that updates are delivered quickly, consistently, and safely.
 
-Why Use Jenkins with AWS?
+**Why Use Jenkins with AWS?**
 When Jenkins is combined with Amazon Web Services (AWS), it becomes even more powerful.
 AWS provides the cloud infrastructure, while Jenkins handles the automation.
 
@@ -44,6 +43,59 @@ This creates a smooth pipeline where code moves from development → testing →
 CI/CD Pipeline with Jenkins and AWS
 Below is a simple diagram of how Jenkins integrates with AWS services in a CI/CD pipeline:
 ![alt text](image-93.png)
+
+
+**Creation of Jenkins Server on AWS**
+Login to your aws and click launch instance
+
+Give a name tag "mohammed-jenkins-server"
+
+-Select UBUNTU as your AMI
+-Select Ubuntu server 22.04 LTS
+
+For the instance type select t3.small well depends on how big is your project
+Select your key pair login
+
+Click on allow HTTP and create your security group if you haven't "mohammed-jenkins-allow-http" and description "mohammed-jenkins-allow-http-this-is-jenkins"
+Select the inbound security group rule to :
+
+SSH
+Type: SSH
+
+Port: 22
+
+Source: your IP only
+
+Jenkins Web UI
+
+Type: Custom TCP
+
+Port: 8080
+
+Source: your IP only
+
+Storage: 30–40 GB gp3 is comfortable.
+
+Click Launch instance → wait until Instance state = Running.
+
+<img width="1617" height="693" alt="image" src="https://github.com/user-attachments/assets/b2545a24-e284-4164-8822-b7791d1523eb" />
+
+
+Open gitbash cd to your ssh and connect to your jenkins ec2 you have created
+Click you jenkins ec2 and click connect and copypaste into your gitbash command follows :
+`chmod 400 "tech508-mohammed-aws.pem`
+`ssh -i "tech508-mohammed-aws.pem" ubuntu@ec2-108-130-144-5.eu-west-1.compute.amazonaws.com`
+
+You must do the Update system apt-get update && sudo apt-get -y upgrade adn after sudo timedatectl set-timezone Europe/London   # optional, set correct timezone
+Install Java (required by Jenkins) sudo apt-get install -y openjdk-17-jre
+Check Java version java -version and should give you version 17 this is the output you should get:
+
+
+
+
+
+**Task: 3-job Jenkins pipeline to deploy Sparta test app**
+
 
 
 Pre-requisites: You already have:
