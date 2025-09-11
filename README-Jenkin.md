@@ -64,17 +64,17 @@ Select the inbound security group rule to :
 
 - Port: 22
 
-Source: your IP only
+- Source: your IP only
 
-Jenkins Web UI
+- Jenkins Web UI
 
-Type: Custom TCP
+- Type: Custom TCP
 
-Port: 8080
+- Port: 8080
 
-Source: your IP only
+- Source: your IP only
 
-Storage: 30–40 GB gp3 is comfortable.
+- Storage: 30–40 GB gp3 is comfortable.
 
 Click Launch instance → wait until Instance state = Running.
 
@@ -82,12 +82,22 @@ Click Launch instance → wait until Instance state = Running.
 
 
 Open gitbash cd to your ssh and connect to your jenkins ec2 you have created
+
 Click you jenkins ec2 and click connect and copypaste into your gitbash command follows :
+
 `chmod 400 "tech508-mohammed-aws.pem`
+
 `ssh -i "tech508-mohammed-aws.pem" ubuntu@ec2-108-130-144-5.eu-west-1.compute.amazonaws.com`
 
-You must do the Update system apt-get update && sudo apt-get -y upgrade adn after sudo timedatectl set-timezone Europe/London   # optional, set correct timezone
-Install Java (required by Jenkins) sudo apt-get install -y openjdk-17-jre
+You must do the Update 
+
+`system apt-get update && sudo apt-get -y` upgrade adn after 
+
+`sudo timedatectl set-timezone` Europe/London   # optional, set correct timezone
+Install Java (required by Jenkins) 
+
+`sudo apt-get install -y`  openjdk-17-jre
+
 Check Java version java -version and should give you version 17 this is the output you should get:
 
 **Task: 3-job Jenkins pipeline to deploy Sparta test app**
@@ -97,29 +107,39 @@ Check Java version java -version and should give you version 17 this is the outp
 
 **Creating and testing a basic project (get date and time)**
 Creation
-Click New Item in the sidebar
-Enter a descriptive project name
-For this example, use rubaet-get-date-and-time
-Select Freestyle Project, then click OK
-It will take you to the configure page
-Enter a description in the box type "testing jenkins"
-Tick the box next to Discard old builds, then specify a maximum number of old builds to keep
+
+- Click New Item in the sidebar
+- Enter a descriptive project name
+For this example, use mohammed-get-date-and-time
+
+- Select Freestyle Project, then click OK
+  
+- It will take you to the configure page
+
+- Enter a description in the box type "testing jenkins"
+  
+- Tick the box next to Discard old builds, then specify a maximum number of old builds to keep
 For this example, choose 5
+
 Scroll down to Build Steps
-Click Add build steps, and select Execute shell from the drop-down
-inside the Execute Shell write "uname -a " to find linux name .
-Click Save
+
+- Click Add build steps, and select Execute shell from the drop-down
+
+- inside the Execute Shell write "uname -a " to find linux name .
+
+- Click Save
+
 You can check console output to see output
 
 
 Pre-requisites: You already have:
 
-Job 1 <yourname>-job1-ci-test working
+**Job 1 <yourname>-job1-ci-test working**
 
 ![alt text](/Image%20folder/image-9.png)
 Steps:
 
-Step 1: Get Job 2 working:
+**Step 1: Get Job 2 working:**
 
         
         Name Job 2: similar to project-tech508-mohammed-job2-ci-merge
@@ -192,18 +212,7 @@ Step 5: go to git bash and cd tech508-sparta-test-app-cicd:
 Next you go back to Jenkins to see if its merges the first job and second job
 
 ![alt text](/Image%20folder/image-18.png)
-
-
-
-
-
-
-
-
-
-
-        
-
+ 
 
 **Get Job 3 working:**
 Step 1: Name Job 3: similar to <yourname>-job3-cd-deploy
