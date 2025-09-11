@@ -90,12 +90,26 @@ You must do the Update system apt-get update && sudo apt-get -y upgrade adn afte
 Install Java (required by Jenkins) sudo apt-get install -y openjdk-17-jre
 Check Java version java -version and should give you version 17 this is the output you should get:
 
-
-
-
-
 **Task: 3-job Jenkins pipeline to deploy Sparta test app**
 
+<img width="560" height="219" alt="image" src="https://github.com/user-attachments/assets/e1ac12c1-cc2e-4bc0-bfd8-75df6e390a8d" />
+
+
+**Creating and testing a basic project (get date and time)**
+Creation
+Click New Item in the sidebar
+Enter a descriptive project name
+For this example, use rubaet-get-date-and-time
+Select Freestyle Project, then click OK
+It will take you to the configure page
+Enter a description in the box type "testing jenkins"
+Tick the box next to Discard old builds, then specify a maximum number of old builds to keep
+For this example, choose 5
+Scroll down to Build Steps
+Click Add build steps, and select Execute shell from the drop-down
+inside the Execute Shell write "uname -a " to find linux name .
+Click Save
+You can check console output to see output
 
 
 Pre-requisites: You already have:
