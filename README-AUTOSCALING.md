@@ -19,6 +19,8 @@ Horizontal scaling increases capacity by adding more instances (VMs) rather than
 
 With auto-scaling, AWS automatically adjusts the number of instances to meet demand, adding capacity during peak times and removing unnecessary instances when demand falls.
 
+**High Avilability**
+when a instances fail the autoscaling group would replace it the instance so it front end can continue working. 
 Sizing terminology:
 
 Scale out → add more instances
@@ -43,7 +45,9 @@ For the sparta app, set the min and desired to 2 and the max to 3
  
  
  **why use an AWS auto scaling group**
- 
+ **Diagram:**
+ <img width="1160" height="837" alt="image" src="https://github.com/user-attachments/assets/d382ced6-17c2-4624-8444-8d0ee7c16f30" />
+
  when the App virtual machine has high level of cpu it starts to fall over.
  
  App virtual machine has a cloud watch monitoring the cpu load and if you miss it it goes to dashboard to notify you missed it
@@ -79,13 +83,20 @@ For the sparta app, set the min and desired to 2 and the max to 3
  
 **Creating a launch template**
 In the EC2 sidebar, go to Instances Launch Templates
+
 In the top right-hand corner, click Create launch template
+
 Give the template a descriptive name using the standard naming convention
+
 It should start with tech508-mohammed
+
 (Optional) Add a description
+
 Under Application and OS Images (Amazon Machine Image), select My AMIs> Owned by me, then search for the appropriate AMI
 Select t3.micro from the Instance Type drop-down
+
 Select the correct key pair from the Key pair (login) drop-down
+
 Under Network settings, choose Select existing security group, then search for an appropriate one
 For the Sparta app, the security group should allow SSH and HTTP
 Paste the script into the User data box under Advanced details which is this:
