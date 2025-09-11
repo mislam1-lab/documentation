@@ -136,26 +136,33 @@ User Data:
 Launch
 
 **Part 4 — Auto Scaling & Load Balancer Setup**
-Login to AWS
-In EC2 go to Launch Instance and create:
-Name: tech508-rubaet-for-asg-app-lt
+Part 4 — Auto Scaling & Load Balancer Setup
+Log in to AWS (if needed).
+
+In EC2 → Launch instance and create the base instance to save as a Launch Template:
+
+Name: tech508-mohammed-for-asg-app-lt
 AMI: Owned by me → tech508-rubaet-test-sparta-app-ready-to-run
 Instance type: t3.micro
-Key pair: select existing
+Key pair: (select existing)
 Security group: tech508-rubaet-sparta-app-allow-SSH-HTTP-3000
-Inbound Rules:
-SSH (22) from 0.0.0.0/0
-HTTP (80) from 0.0.0.0/0
-Custom TCP (3000, Description: SPARTA APP) from 0.0.0.0/0
+Inbound rules:
+
+SSH (22): 0.0.0.0/0
+HTTP (80): 0.0.0.0/0
+Custom TCP (3000): 0.0.0.0/0
 Advanced settings (User Data):
+
 #!/bin/bash
 cd repo/app
 pm2 start app.js
 Save as Launch Template
-Actions → Launch instance with template
-Launch
-Copy public IP and test in browser
+Blueprint for all auto-scaled instances.
 
+Actions → Launch instance with template
+Create a single test instance to confirm it works.
+
+Launch, then copy the public IP and test in a browser.
 
 
 
