@@ -5,40 +5,46 @@ Scaling is the process of adjusting computing resources to match workload demand
 There are two main types of scaling: vertical and horizontal.
 
 **Types of Scaling**
-Vertical Scaling
+
+**Vertical Scaling**
 Vertical scaling increases the capacity of a single virtual machine (VM) by adding more resources such as CPU, RAM, or storage.
 
 The workload is moved from a smaller instance type to a larger one, and the smaller instance is then decommissioned. While effective for boosting performance, scaling down can be more challenging depending on the cloud provider.
 
-Sizing terminology:
 
-Scale up → add more resources to a single VM
-Scale down → reduce resources of a single VM
-Horizontal Scaling (AWS Preferred Method)
+
+**Horizontal Scaling (AWS Preferred Method)**
 Horizontal scaling increases capacity by adding more instances (VMs) rather than resizing a single one. These instances are typically identical and distributed behind a load balancer.
 
 With auto-scaling, AWS automatically adjusts the number of instances to meet demand, adding capacity during peak times and removing unnecessary instances when demand falls.
 
 **High Avilability**
 when a instances fail the autoscaling group would replace it the instance so it front end can continue working. 
-Sizing terminology:
 
+
+**Sizing terminology:**
+Scale up → add more resources to a single VM
+Scale down → reduce resources of a single VM
 Scale out → add more instances
 Scale in → remove instances
 Deploying the Sparta app with an AWS auto-scaling group
 This set of instructions allows for high availability and scalability for the app. It does not provide instructions for using the app with the database.
 
-Basic overview
-Create an app VM with your preferred method
-Create an app AMI
-Create a launch template (including user data containing the script needed to run the app)
-Create an auto-scaling group using the launch template
-Set up a scaling policy
-To avoid a single point of failure
-Have the auto-scaler spread the new VMs across availability zones within the region
+**Basic overview**
+
+- Create an app VM with your preferred method
+- Create an app AMI
+- Create a launch template (including user data containing the script needed to run the app)
+- Create an auto-scaling group using the launch template
+- Set up a scaling policy
+- To avoid a single point of failure
+- Have the auto-scaler spread the new VMs across availability zones within the region
 For the Sparta test app, use the Ireland region and availabiliy zones 1a, 1b, 1c
+
 The load balancer will spread traffic across the created VMs
+
 Set a max, min and desired number of machines
+
 For the sparta app, set the min and desired to 2 and the max to 3
  
  
@@ -50,30 +56,32 @@ For the sparta app, set the min and desired to 2 and the max to 3
 
  
 **Creating a launch template**
-In the EC2 sidebar, go to Instances Launch Templates
+- In the EC2 sidebar, go to Instances Launch Templates
 
-In the top right-hand corner, click Create launch template
+- In the top right-hand corner, click Create launch template
 
-Give the template a descriptive name using the standard naming convention
+- Give the template a descriptive name using the standard naming convention
 
-It should start with tech508-mohammed
+- It should start with tech508-mohammed
 
-(Optional) Add a description
+- (Optional) Add a description
 
-Under Application and OS Images (Amazon Machine Image), select My AMIs> Owned by me, then search for the appropriate AMI
-Select t3.micro from the Instance Type drop-down
+- Under Application and OS Images (Amazon Machine Image), select My AMIs> Owned by me, then search for the appropriate AMI
+- Select t3.micro from the Instance Type drop-down
+- Select the correct key pair from the Key pair (login) drop-down
 
-Select the correct key pair from the Key pair (login) drop-down
-
-Under Network settings, choose Select existing security group, then search for an appropriate one
+- Under Network settings, choose Select existing security group, then search for an appropriate one
 For the Sparta app, the security group should allow SSH and HTTP
 Paste the script into the User data box under Advanced details which is this:
-bash
-   #!/bin/bash
-   cd repo/app
-   pm2 start app.js
-To be updated with an option for a database script later
-Click Create launch template in the Summary box on the right-hand side
+
+`bash`
+   `#!/bin/bash`
+   `cd repo/app`
+   `pm2 start app.js`
+   
+- To be updated with an option for a database script later
+
+- Click Create launch template in the Summary box on the right-hand side
  
  
  **Create Autoscaling groups**
