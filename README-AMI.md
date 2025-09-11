@@ -9,31 +9,33 @@ The app script has already been run through user data in the original VM and wil
 
 A small script should be given in user data of the new VM being made from the image including:
 
-#!/bin/bash
-cd into app folder
-set environment variable for database private IP
-pm2 start app.js
-Creating VMs from AMIs
+`#!/bin/bash`
+`cd into app folder`
+`set environment variable for database private IP`
+`pm2 start app.js`
+
+
+**Creating VMs from AMIs**
 create database and app VMs with previous scripts in user data, make sure the app works exactly as it should
 on each VM:
+
 Actions -> Create image
-naming convention: tech508-tabitha-test-sparta-app-ready-to-run-database/app
-Add new tag
-"Name" - name as above
-Create image
-when status is Available, Launch instance from AMI
+naming convention: tech508-mohammed-test-sparta-app-ready-to-run-database/app
+- Add new tag
+- "Name" - name as above
+- Create image
+- when status is Available, Launch instance from AMI
+
 database as usual
 app needs short script in user data:
 see run-app-only.sh
-#!/bin/bash to define bash script
-export DB_HOST=mongodb://<privIP>:27017/posts set env var for database IP
-make sure to change to the new db instance IP
-cd repo/app navigate to app folder
-pm2 stop all stop any previous processes
-pm2 start app.js start the app
 
-
-
+`#!/bin/bash to define bash script`
+`export DB_HOST=mongodb://<privIP>:27017/posts set env var for database IP`
+`make sure to change to the new db instance IP`
+`cd repo/app navigate to app folder`
+`pm2 stop all stop any previous processes`
+`pm2 start app.js start the app`
 
 
 
