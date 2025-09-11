@@ -1,8 +1,7 @@
 
 **Task: Automate app Stage 3 - Automate app deployment with user data**
 
-
-
+User data:  instead of manuel deploy the sparta app, this script can manually provision it by itself.
 
 Backend 
 Step 1: create instance from virtual machine called tech508-mohammed-sparta-app-db2
@@ -12,11 +11,13 @@ Step 2: once created we then add all the previous group and on the bottom of ins
 
 ![alt text](/Image%20folder/image-95.png)
 
-`#!/bin/bash`
- 
 #Scipt for the database
  
 # Update the package list to make sure the latest versions are installed
+
+`#!/bin/bash`
+Tells the system to run the script using the Bash shell. 
+
 `echo "update..."`
 `sudo DEBIAN_FRONTEND=noninteractive apt-get update`
 `echo "update done"`
@@ -26,6 +27,8 @@ Step 2: once created we then add all the previous group and on the bottom of ins
 `sudo DEBIAN_FRONTEND=noninteractive apt upgrade -y`
 `echo "upgrade done"`
 `echo`
+
+So in this section we want to make commands non interactive, so the script can run by it self
  
 `sudo DEBIAN_FRONTEND=noninteractive apt-get install gnupg curl`
  
